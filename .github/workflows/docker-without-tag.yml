@@ -10,6 +10,7 @@ on:
     inputs:
       tag_version:
         description: 'Enter the tag version for the Docker image'
+        default: 'latest'
         required: true
       description:
         description: 'Enter the description for the Docker image'
@@ -68,17 +69,18 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CHATNEXTWEB }}
+          password: ${{secrets.GITHUB_TOKEN }}
 
       - 
           name: Extract metadata (tags, labels) for Docker
           id: meta
           uses: docker/metadata-action@v4
           with:
-            images: h0llyw00dzz/chatgpt-next-web
+            images: ${{ github.repository }}
             tags: |
-              type=raw,value=latest
-              type=ref,event=tag
+             type=raw,value=latest
+             type=raw,value=${{ github.event.inputs.tag_version }}
+             type=ref,event=tag
 
       -
         name: Set up QEMU
@@ -96,7 +98,7 @@ jobs:
           context: ${{ runner.workspace }}/ChatGPT-Next-Web/go-reverse-proxy
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/h0llyw00dzz/chatgpt-next-web:${{ github.event.inputs.go_reverse_proxy_tag }}
+          tags: ghcr.io/${{ github.repository }}:${{ github.event.inputs.go_reverse_proxy_tag }}
           labels: |
             ${{ steps.meta.outputs.labels }}
             org.opencontainers.image.description="${{ github.event.inputs.description }}"
@@ -108,11 +110,10 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: | 
-            ghcr.io/h0llyw00dzz/chatgpt-next-web:${{ github.event.inputs.tag_version }}
-            ghcr.io/h0llyw00dzz/chatgpt-next-web:latest
+            ghcr.io/${{ github.repository }}:${{ github.event.inputs.tag_version }}
           labels: |
             ${{ steps.meta.outputs.labels }}
             org.opencontainers.image.description="${{ github.event.inputs.description }}"
