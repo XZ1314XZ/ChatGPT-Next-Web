@@ -76,7 +76,7 @@ jobs:
           id: meta
           uses: docker/metadata-action@v4
           with:
-            images: ${{ github.repository }}
+            images: xz1314xz/chatgpt-next-web
             tags: |
              type=raw,value=latest
              type=raw,value=${{ github.event.inputs.tag_version }}
@@ -98,7 +98,7 @@ jobs:
           context: ${{ runner.workspace }}/ChatGPT-Next-Web/go-reverse-proxy
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.event.inputs.go_reverse_proxy_tag }}
+          tags: ghcr.io/xz1314xz/chatgpt-next-web:${{ github.event.inputs.go_reverse_proxy_tag }}
           labels: |
             ${{ steps.meta.outputs.labels }}
             org.opencontainers.image.description="${{ github.event.inputs.description }}"
@@ -113,7 +113,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: | 
-            ghcr.io/${{ github.repository }}:${{ github.event.inputs.tag_version }}
+            ghcr.io/xz1314xz/chatgpt-next-web:${{ github.event.inputs.tag_version }}
           labels: |
             ${{ steps.meta.outputs.labels }}
             org.opencontainers.image.description="${{ github.event.inputs.description }}"
