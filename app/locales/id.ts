@@ -157,6 +157,7 @@ const id: PartialLocaleType = {
     DeleteChat: "Anda yakin ingin menghapus percakapan yang dipilih?",
     DeleteToast: "Percakapan telah dihapus",
     Revert: "Kembali",
+    Search: "Masukkan kata kunci filter",
   },
   Settings: {
     Title: "Pengaturan",
@@ -404,6 +405,10 @@ const id: PartialLocaleType = {
     MaxTokens: {
       Title: "Token Maksimum",
       SubTitle: "Panjang maksimum token input dan output",
+    },
+    UseMaxTokens: {
+      Title: "Gunakan Jumlah Token Maksimum",
+      SubTitle: "Apakah akan menggunakan jumlah maksimum token.",
     },
     PresencePenalty: {
       Title: "Penalti Kehadiran",

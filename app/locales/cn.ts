@@ -170,6 +170,7 @@ const cn = {
     DeleteChat: "确认删除选中的对话？",
     DeleteToast: "已删除会话",
     Revert: "撤销",
+    Search: "输入筛选的关键词",
   },
   Settings: {
     Title: "设置",
@@ -467,6 +468,10 @@ const cn = {
       Title: "单次回复限制 (max_tokens)",
       SubTitle: "单次交互所用的最大 Token 数",
     },
+    UseMaxTokens: {
+      Title: "使用最大标记数",
+      SubTitle: "是否使用最大标记数。",
+    },
     PresencePenalty: {
       Title: "话题新鲜度 (presence_penalty)",
       SubTitle: "值越大，越有可能扩展到新话题",
@@ -611,9 +616,9 @@ const cn = {
     Manage: "管理",
   },
   Exporter: {
-    Description : {
-      Title: "只有清除上下文之后的消息会被展示"
-    },  
+    Description: {
+      Title: "只有清除上下文之后的消息会被展示",
+    },
     Model: "模型",
     ServiceProvider: "服务提供商",
     Messages: "消息",

@@ -173,6 +173,7 @@ const en: LocaleType = {
     DeleteChat: "Confirm to delete the selected conversation?",
     DeleteToast: "Chat Deleted",
     Revert: "Revert",
+    Search: "Enter filter keywords",
   },
   Settings: {
     Title: "Settings",
@@ -472,6 +473,10 @@ const en: LocaleType = {
       Title: "Max Tokens",
       SubTitle: "Maximum length of input tokens and generated tokens",
     },
+    UseMaxTokens: {
+      Title: "Use Max Tokens",
+      SubTitle: "Whether to use the maximum number of max tokens.",
+    },
     PresencePenalty: {
       Title: "Presence Penalty",
       SubTitle:
@@ -616,8 +621,8 @@ const en: LocaleType = {
   },
   Exporter: {
     Description: {
-      Title: "Only messages after clearing the context will be displayed"
-    },  
+      Title: "Only messages after clearing the context will be displayed",
+    },
     Model: "Model",
     ServiceProvider: "Service Provider",
     Messages: "Messages",
