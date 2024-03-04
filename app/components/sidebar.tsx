@@ -13,7 +13,7 @@ import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import PrivacyIcon from "../icons/locked.svg";
 import PinnedIcon from "../icons/pin.svg";
-import TodoIcon from "../icons/edit.svg"
+import TodoIcon from "../icons/edit.svg"w
 import DragIcon from "../icons/drag.svg";
 
 import Locale from "../locales";
@@ -186,38 +186,7 @@ export function SideBar(props: { className?: string }) {
           }}
           shadow
         />
-        <IconButton
-          icon={<PluginIcon />}
-          text={shouldNarrow ? undefined : Locale.Plugin.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
-          shadow
-        />
-        <IconButton
-          icon={<PrivacyIcon />}
-          text={shouldNarrow ? undefined : Locale.PrivacyPage.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() =>
-            navigate(Path.PrivacyPage, { state: { fromHome: true } })
-          }
-          shadow
-        />
-      </div>
-      <div className={styles["sidebar-header-bar"]}>
-        <IconButton
-          icon={<PinnedIcon />}
-          text={shouldNarrow ? undefined : Locale.Changelog.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => navigate(Path.ChangeLog, { state: { fromHome: true } })}
-          shadow
-        />
-        <IconButton
-          icon={<TodoIcon />}
-          text={shouldNarrow ? undefined : Locale.TODOList.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
-          shadow
-        />
+        
       </div>
 
       <div className={styles["chat-list-search"]}>
@@ -258,11 +227,7 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
+      
         </div>
         <div>
           <IconButton
