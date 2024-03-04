@@ -13,7 +13,7 @@ import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import PrivacyIcon from "../icons/locked.svg";
 import PinnedIcon from "../icons/pin.svg";
-import TodoIcon from "../icons/edit.svg"w
+import TodoIcon from "../icons/edit.svg"
 import DragIcon from "../icons/drag.svg";
 
 import Locale from "../locales";
@@ -186,8 +186,9 @@ export function SideBar(props: { className?: string }) {
           }}
           shadow
         />
-        
+      
       </div>
+  
 
       <div className={styles["chat-list-search"]}>
         <SearchInput
@@ -227,7 +228,7 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-      
+  
         </div>
         <div>
           <IconButton
